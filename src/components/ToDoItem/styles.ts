@@ -9,6 +9,17 @@ export const Container = styled('View', {
   paddingRight: 20,
 
   justifyContent: 'space-between',
+
+  borderBottomWidth: 1,
+  borderBottomColor: 'transparent',
+
+  variants: {
+    editing: {
+      true: {
+        borderBottomColor: '$primary',
+      },
+    },
+  },
 });
 
 export const ToDoTextInput = styled(TextInput, {

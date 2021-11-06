@@ -39,7 +39,7 @@ export function ToDoItem({ text, showGradient = false }: ToDoItemProps) {
           : ['transparent']
       }
     >
-      <Container>
+      <Container editing={isEditing}>
         <Row>
           <Checkbox onChange={handleCheckboxChange} />
 

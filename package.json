@@ -18,6 +18,7 @@
     "expo-status-bar": "~1.1.0",
     "react": "17.0.1",
     "react-native": "0.64.2",
+    "react-native-iphone-x-helper": "^1.3.1",
     "react-native-svg": "12.1.1",
     "stitches-native": "^0.0.1-8"
   },

@@ -1,11 +1,11 @@
 import React from 'react';
 import { useFonts } from 'expo-font';
+import { theme } from 'stitches.config';
 import AppLoading from 'expo-app-loading';
-import { StyleSheet, View } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 import { Inter_500Medium, Inter_400Regular } from '@expo-google-fonts/inter';
 
-import { ToDoItem } from '@components/ToDoItem';
-import { Input } from '@components/Input';
+import { Home } from 'src/screens/Home';
 
 export function MyApp() {
   const [fontsLoaded] = useFonts({
@@ -18,19 +18,10 @@ export function MyApp() {
   }
 
   return (
-    <View style={styles.container}>
-      <Input />
-      <ToDoItem showGradient text="Arrumar a cama" />
-      <ToDoItem text="Ser feliz" />
-      <ToDoItem showGradient text="Lavar meu possante" />
-    </View>
+    <>
+      <StatusBar style="light" backgroundColor={theme.colors.primary} />
+
+      <Home />
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#F5F5F5',
-    justifyContent: 'center',
-  },
-});
