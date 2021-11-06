@@ -13,7 +13,7 @@ export const Container = styled('Pressable', {
   variants: {
     checked: {
       true: {
-        borderColor: '$green',
+        borderWidth: 0,
         backgroundColor: '$green',
       },
     },

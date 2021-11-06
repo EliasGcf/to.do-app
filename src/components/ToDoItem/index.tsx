@@ -8,7 +8,13 @@ import TrashSVG from '@assets/svg/trash.svg';
 import { Row } from '@components/utils/Row';
 import { Checkbox } from '@components/Checkbox';
 
-import { ActionsButton, ActionsButtonDivider, Container, ToDoTextInput } from './styles';
+import {
+  ActionsButton,
+  ActionsButtonDivider,
+  Container,
+  Main,
+  ToDoTextInput,
+} from './styles';
 
 type ToDoItemProps = {
   text: string;
@@ -36,11 +42,11 @@ export function ToDoItem({ text, showGradient = false }: ToDoItemProps) {
       colors={
         showGradient
           ? ['rgba(196, 196, 196, 0.24)', 'rgba(196, 196, 196, 0)']
-          : ['transparent']
+          : ['transparent', 'transparent']
       }
     >
       <Container editing={isEditing}>
-        <Row>
+        <Main>
           <Checkbox onChange={handleCheckboxChange} />
 
           <ToDoTextInput
@@ -49,7 +55,7 @@ export function ToDoItem({ text, showGradient = false }: ToDoItemProps) {
             defaultValue={text}
             checked={isChecked}
           />
-        </Row>
+        </Main>
 
         <ActionsButton>
           <TouchableOpacity onPress={toggleIsEditing} activeOpacity={0.7}>

@@ -22,6 +22,11 @@ export const Container = styled('View', {
   },
 });
 
+export const Main = styled('View', {
+  flexDirection: 'row',
+  alignItems: 'center',
+});
+
 export const ToDoTextInput = styled(TextInput, {
   fontSize: 14,
   color: '$gray',
