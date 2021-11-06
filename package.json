@@ -10,15 +10,23 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo-google-fonts/inter": "^0.2.0",
     "expo": "~43.0.0",
+    "expo-app-loading": "~1.2.1",
+    "expo-font": "~10.0.3",
+    "expo-linear-gradient": "~10.0.3",
     "expo-status-bar": "~1.1.0",
     "react": "17.0.1",
-    "react-native": "0.64.2"
+    "react-native": "0.64.2",
+    "react-native-svg": "12.1.1",
+    "stitches-native": "^0.0.1-8"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@types/react": "~17.0.21",
     "@types/react-native": "~0.64.12",
+    "babel-plugin-module-resolver": "^4.1.0",
+    "react-native-svg-transformer": "^0.14.3",
     "typescript": "~4.3.5"
   }
 }
