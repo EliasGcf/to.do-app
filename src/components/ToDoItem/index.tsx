@@ -5,6 +5,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import EditSVG from '@assets/svg/edit.svg';
 import TrashSVG from '@assets/svg/trash.svg';
 
+import { ToDo } from '@context/ToDo/context';
+
 import { Checkbox } from '@components/Checkbox';
 
 import {
@@ -14,21 +16,40 @@ import {
   Main,
   ToDoTextInput,
 } from './styles';
+import { useToDos } from '@hooks/useToDos';
 
 type ToDoItemProps = {
-  text: string;
+  data: ToDo;
   showGradient?: boolean;
 };
 
-export function ToDoItem({ text, showGradient = false }: ToDoItemProps) {
-  const [isChecked, setIsChecked] = useState(false);
+export function ToDoItem({ data, showGradient = false }: ToDoItemProps) {
+  const { markAsDone, markAsUnDone, removeToDo, changeToDoMessage } = useToDos();
+
   const [isEditing, setIsEditing] = useState(false);
 
   const inputRef = useRef<TextInput>(null);
+  const inputTextValue = useRef(data.message);
 
-  function handleCheckboxChange(newValue: boolean) {
+  function handleCheckboxChange(isChecked: boolean) {
     setIsEditing(false);
-    setIsChecked(newValue);
+
+    if (isChecked) {
+      markAsDone(data.id);
+    } else {
+      markAsUnDone(data.id);
+    }
+  }
+
+  function handleTextInputBlur() {
+    setIsEditing(false);
+
+    if (inputTextValue.current.trim() !== data.message) {
+      changeToDoMessage({
+        id: data.id,
+        message: inputTextValue.current.trim(),
+      });
+    }
   }
 
   useEffect(() => {
@@ -47,14 +68,15 @@ export function ToDoItem({ text, showGradient = false }: ToDoItemProps) {
     >
       <Container editing={isEditing}>
         <Main>
-          <Checkbox onChange={handleCheckboxChange} />
+          <Checkbox isChecked={data.done} onChange={handleCheckboxChange} />
 
           <ToDoTextInput
             ref={inputRef}
+            checked={data.done}
             editable={isEditing}
-            defaultValue={text}
-            checked={isChecked}
-            onBlur={() => setIsEditing(false)}
+            defaultValue={data.message}
+            onBlur={handleTextInputBlur}
+            onChangeText={(text) => (inputTextValue.current = text)}
           />
         </Main>
 
@@ -65,7 +87,7 @@ export function ToDoItem({ text, showGradient = false }: ToDoItemProps) {
 
           <ActionsButtonDivider />
 
-          <TouchableOpacity activeOpacity={0.7}>
+          <TouchableOpacity onPress={() => removeToDo(data.id)} activeOpacity={0.7}>
             <TrashSVG />
           </TouchableOpacity>
         </ActionsButton>

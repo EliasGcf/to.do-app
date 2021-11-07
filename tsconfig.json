@@ -5,7 +5,10 @@
     "baseUrl": ".",
     "paths": {
       "@assets/*": ["./src/assets/*"],
-      "@components/*": ["./src/components/*"]
+      "@components/*": ["./src/components/*"],
+      "@context/*": ["./src/context/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@screens/*": ["./src/screens/*"]
     }
   }
 }

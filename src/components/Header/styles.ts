@@ -9,10 +9,22 @@ export const Container = styled('View', {
   paddingBottom: 60,
   paddingHorizontal: 24,
   paddingTop: getStatusBarHeight() + 24,
+
+  flexDirection: 'row',
+  alignItems: 'center',
+  justifyContent: 'space-between',
 });
 
-export const Info = styled('View', {
+export const Info = styled('Text', {
   flexDirection: 'row',
+  fontSize: 15,
+  lineHeight: 20,
+  color: '$white',
+  fontFamily: '$regular',
+});
+
+export const InfoCount = styled('Text', {
+  fontFamily: '$bold',
 });
 
 export const HeaderInput = styled(Input, {

@@ -1,24 +1,20 @@
 import { ToDoItem } from '@components/ToDoItem';
+import { ToDo } from '@context/ToDo/context';
 import React from 'react';
-import { FlatList, Text, View } from 'react-native';
+import { FlatList } from 'react-native';
+import { useToDos } from '@hooks/useToDos';
 
 // import { Container } from './styles';
 
-type ToDo = {
-  id: string;
-  message: string;
-};
-
 export function ToDoList() {
+  const { toDos } = useToDos();
+
   return (
     <FlatList<ToDo>
-      data={[
-        { id: '1', message: 'ToDo 1' },
-        { id: '2', message: 'ToDo 2' },
-      ]}
+      data={toDos}
       keyExtractor={(toDo) => toDo.id}
       renderItem={({ item: toDo, index }) => (
-        <ToDoItem showGradient={index % 2 === 0} text={toDo.message} />
+        <ToDoItem showGradient={index % 2 === 0} data={toDo} />
       )}
     />
   );

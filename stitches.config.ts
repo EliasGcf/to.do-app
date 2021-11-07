@@ -16,6 +16,7 @@ export const {
     fonts: {
       regular: 'Inter_400Regular',
       mediu: 'Inter_500Medium',
+      bold: 'Inter_700Bold',
     },
   },
 });

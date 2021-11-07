@@ -5,15 +5,12 @@ import CheckSVG from '@assets/svg/check.svg';
 import { Container } from './styles';
 
 type CheckboxProps = {
+  isChecked: boolean;
   onChange?: (value: boolean) => void;
 };
 
-export function Checkbox({ onChange }: CheckboxProps) {
-  const [isChecked, setIsChecked] = useState(false);
-
+export function Checkbox({ onChange, isChecked }: CheckboxProps) {
   function handleChange() {
-    setIsChecked((prevState) => !prevState);
-
     if (onChange) onChange(!isChecked);
   }
 
