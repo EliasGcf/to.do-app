@@ -22,11 +22,12 @@ type ToDoItemProps = {
 
 export function ToDoItem({ text, showGradient = false }: ToDoItemProps) {
   const [isChecked, setIsChecked] = useState(false);
-  const [isEditing, toggleIsEditing] = useReducer((state) => !state, false);
+  const [isEditing, setIsEditing] = useState(false);
 
   const inputRef = useRef<TextInput>(null);
 
   function handleCheckboxChange(newValue: boolean) {
+    setIsEditing(false);
     setIsChecked(newValue);
   }
 
@@ -53,12 +54,12 @@ export function ToDoItem({ text, showGradient = false }: ToDoItemProps) {
             editable={isEditing}
             defaultValue={text}
             checked={isChecked}
-            onBlur={toggleIsEditing}
+            onBlur={() => setIsEditing(false)}
           />
         </Main>
 
         <ActionsButton>
-          <TouchableOpacity onPress={toggleIsEditing} activeOpacity={0.7}>
+          <TouchableOpacity onPress={() => setIsEditing(!isEditing)} activeOpacity={0.7}>
             <EditSVG />
           </TouchableOpacity>
 
