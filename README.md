@@ -35,6 +35,34 @@ Remembering that you need to have a [Figma](http://figma.com/) account to access
 - [React Native Stitches](https://github.com/Temzasse/stitches-native)
 - [AsyncStorage](https://react-native-async-storage.github.io/async-storage/)
 
+## 💻 Getting started
+
+### Requirements
+
+- [Node.js](https://nodejs.org/en/)
+- [Yarn](https://classic.yarnpkg.com/) or [npm](https://www.npmjs.com/package/npm)
+
+**Clone the project and access the folder**
+
+```bash
+$ https://github.com/EliasGcf/to.do-app.git && cd to.do-app
+```
+
+**Follow the steps below**
+
+Follow the steps below:
+
+```bash
+# Install the dependencies
+$ yarn
+
+# If you are going to emulate with android, run this command
+$ yarn android
+
+# If you are going to emulate with ios, run this command
+$ yarn ios
+```
+
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
