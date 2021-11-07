@@ -5,7 +5,6 @@ import { LinearGradient } from 'expo-linear-gradient';
 import EditSVG from '@assets/svg/edit.svg';
 import TrashSVG from '@assets/svg/trash.svg';
 
-import { Row } from '@components/utils/Row';
 import { Checkbox } from '@components/Checkbox';
 
 import {
@@ -54,6 +53,7 @@ export function ToDoItem({ text, showGradient = false }: ToDoItemProps) {
             editable={isEditing}
             defaultValue={text}
             checked={isChecked}
+            onBlur={toggleIsEditing}
           />
         </Main>
 
