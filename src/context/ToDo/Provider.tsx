@@ -1,12 +1,14 @@
 import React, { ReactNode, useState } from 'react';
+
 import { ChangeToDoMessageParams, ToDo, ToDoContext } from '@context/ToDo/context';
+import { useAsyncStorage } from '@hooks/useAsyncStorage';
 
 type ToDoContextProviderProps = {
   children: ReactNode;
 };
 
 export function ToDoContextProvider({ children }: ToDoContextProviderProps) {
-  const [toDos, setToDos] = useState<ToDo[]>([]);
+  const [toDos, setToDos] = useAsyncStorage<ToDo[]>('@to.do:ToDos', []);
 
   function addToDo(message: string) {
     const newToDo = {
