@@ -1,18 +1,18 @@
 import React from 'react';
 
 import { Header } from '@components/Header';
-import { ToDoItem } from '@components/ToDoItem';
+import { ToDoList } from '@components/ToDoList';
 
-import { Container } from './styles';
+import { Container, ListWrapper } from './styles';
 
 export function Home() {
   return (
     <Container>
       <Header />
 
-      <ToDoItem showGradient text="Arrumar a cama" />
-      <ToDoItem text="Ser feliz" />
-      <ToDoItem showGradient text="Lavar meu possante" />
+      <ListWrapper>
+        <ToDoList />
+      </ListWrapper>
     </Container>
   );
 }
