@@ -50,8 +50,6 @@ $ https://github.com/EliasGcf/to.do-app.git && cd to.do-app
 
 **Follow the steps below**
 
-Follow the steps below:
-
 ```bash
 # Install the dependencies
 $ yarn
