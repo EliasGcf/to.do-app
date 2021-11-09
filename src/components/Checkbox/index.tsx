@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { MotiView } from 'moti';
+import { scale } from 'react-native-size-matters';
 
 import CheckSVG from '@assets/svg/check.svg';
 
 import { Container } from './styles';
-import { scale } from 'react-native-size-matters';
 
 type CheckboxProps = {
   isChecked: boolean;
@@ -17,7 +18,11 @@ export function Checkbox({ onChange, isChecked }: CheckboxProps) {
 
   return (
     <Container onPress={handleChange} checked={isChecked}>
-      {isChecked && <CheckSVG width={scale(10)} height={scale(8)} />}
+      {isChecked && (
+        <MotiView from={{ scale: 0 }} animate={{ scale: 1 }}>
+          <CheckSVG width={scale(10)} height={scale(8)} />
+        </MotiView>
+      )}
     </Container>
   );
 }
