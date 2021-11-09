@@ -17,9 +17,11 @@
     "expo-font": "~10.0.3",
     "expo-linear-gradient": "~10.0.3",
     "expo-status-bar": "~1.1.0",
+    "moti": "^0.16.1",
     "react": "17.0.1",
-    "react-native": "0.64.2",
+    "react-native": "0.64.3",
     "react-native-iphone-x-helper": "^1.3.1",
+    "react-native-reanimated": "~2.2.0",
     "react-native-size-matters": "^0.4.0",
     "react-native-svg": "12.1.1",
     "stitches-native": "^0.0.1-8"
