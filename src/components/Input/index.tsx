@@ -1,5 +1,6 @@
 import React from 'react';
 import { theme } from 'stitches.config';
+import { scale } from 'react-native-size-matters';
 import { StyleProp, ViewStyle, TextInputProps } from 'react-native';
 
 import ChevronRightSVG from '@assets/svg/chevron-right.svg';
@@ -21,7 +22,7 @@ export function Input({ style, onSubmit, ...rest }: InputProps) {
       />
 
       <IconContainer onPress={onSubmit} activeOpacity={0.7}>
-        <ChevronRightSVG />
+        <ChevronRightSVG width={scale(32)} height={scale(32)} />
       </IconContainer>
     </Container>
   );

@@ -2,11 +2,12 @@ import { styled } from 'stitches.config';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 
 import { Input } from '@components/Input';
+import { scale } from 'react-native-size-matters';
 
 export const Container = styled('View', {
   backgroundColor: '$primary',
 
-  paddingBottom: 60,
+  paddingBottom: scale(60),
   paddingHorizontal: 24,
   paddingTop: getStatusBarHeight() + 24,
 
@@ -17,8 +18,8 @@ export const Container = styled('View', {
 
 export const Info = styled('Text', {
   flexDirection: 'row',
-  fontSize: 15,
-  lineHeight: 20,
+  fontSize: scale(15),
+  lineHeight: scale(20),
   color: '$white',
   fontFamily: '$regular',
 });

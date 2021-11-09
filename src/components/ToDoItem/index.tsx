@@ -17,6 +17,7 @@ import {
   ToDoTextInput,
 } from './styles';
 import { useToDos } from '@hooks/useToDos';
+import { scale } from 'react-native-size-matters';
 
 type ToDoItemProps = {
   data: ToDo;
@@ -82,13 +83,13 @@ export function ToDoItem({ data, showGradient = false }: ToDoItemProps) {
 
         <ActionsButton>
           <TouchableOpacity onPress={() => setIsEditing(!isEditing)} activeOpacity={0.7}>
-            <EditSVG />
+            <EditSVG width={scale(24)} height={scale(24)} />
           </TouchableOpacity>
 
           <ActionsButtonDivider />
 
           <TouchableOpacity onPress={() => removeToDo(data.id)} activeOpacity={0.7}>
-            <TrashSVG />
+            <TrashSVG width={scale(24)} height={scale(24)} />
           </TouchableOpacity>
         </ActionsButton>
       </Container>

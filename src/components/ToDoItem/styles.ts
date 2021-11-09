@@ -1,8 +1,9 @@
 import { TextInput } from 'react-native';
+import { scale } from 'react-native-size-matters';
 import { styled } from 'stitches.config';
 
 export const Container = styled('View', {
-  height: 48,
+  height: scale(48),
   flexDirection: 'row',
   alignItems: 'center',
   paddingLeft: 24,
@@ -10,7 +11,7 @@ export const Container = styled('View', {
 
   justifyContent: 'space-between',
 
-  borderBottomWidth: 1,
+  borderBottomWidth: scale(1),
   borderBottomColor: 'transparent',
 
   variants: {
@@ -28,7 +29,7 @@ export const Main = styled('View', {
 });
 
 export const ToDoTextInput = styled(TextInput, {
-  fontSize: 14,
+  fontSize: scale(14),
   color: '$gray',
   marginLeft: 16,
   fontFamily: '$mediu',
@@ -44,8 +45,8 @@ export const ToDoTextInput = styled(TextInput, {
 });
 
 export const ActionsButtonDivider = styled('View', {
-  height: 24,
-  width: 1,
+  height: scale(24),
+  width: scale(1),
   backgroundColor: '#c4c4c4',
   marginHorizontal: 12,
 });

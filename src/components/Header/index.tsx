@@ -4,6 +4,7 @@ import LogoSVG from '@assets/svg/logo.svg';
 
 import { Container, Info, HeaderInput, InfoCount } from './styles';
 import { useToDos } from '@hooks/useToDos';
+import { scale } from 'react-native-size-matters';
 
 export function Header() {
   const { addToDo, toDos } = useToDos();
@@ -20,7 +21,7 @@ export function Header() {
   return (
     <>
       <Container>
-        <LogoSVG />
+        <LogoSVG width={scale(72)} height={scale(20)} />
         <Info>
           Você tem{' '}
           <InfoCount>
