@@ -25,21 +25,16 @@ type ToDoItemProps = {
 };
 
 export function ToDoItem({ data, showGradient = false }: ToDoItemProps) {
-  const { markAsDone, markAsUnDone, removeToDo, changeToDoMessage } = useToDos();
+  const { toggleDone, removeToDo, changeToDoMessage } = useToDos();
 
   const [isEditing, setIsEditing] = useState(false);
 
   const inputRef = useRef<TextInput>(null);
   const inputTextValue = useRef(data.message);
 
-  function handleCheckboxChange(isChecked: boolean) {
+  function handleCheckboxChange() {
     setIsEditing(false);
-
-    if (isChecked) {
-      markAsDone(data.id);
-    } else {
-      markAsUnDone(data.id);
-    }
+    toggleDone(data.id);
   }
 
   function handleTextInputBlur() {

@@ -44,10 +44,10 @@ export function ToDoContextProvider({ children }: ToDoContextProviderProps) {
     setToDos(newToDos);
   }
 
-  function markAsUnDone(id: string) {
+  function toggleDone(id: string) {
     const newToDos = toDos.map((toDo) => {
       if (toDo.id === id) {
-        return { ...toDo, done: false };
+        return { ...toDo, done: !toDo.done };
       }
 
       return toDo;
@@ -64,7 +64,7 @@ export function ToDoContextProvider({ children }: ToDoContextProviderProps) {
 
   return (
     <ToDoContext.Provider
-      value={{ toDos, addToDo, changeToDoMessage, markAsDone, markAsUnDone, removeToDo }}
+      value={{ toDos, addToDo, changeToDoMessage, toggleDone, removeToDo }}
     >
       {children}
     </ToDoContext.Provider>

@@ -15,8 +15,7 @@ export type ToDoContextData = {
   toDos: ToDo[];
   addToDo: (message: string) => void;
   changeToDoMessage: (params: ChangeToDoMessageParams) => void;
-  markAsDone: (id: string) => void;
-  markAsUnDone: (id: string) => void;
+  toggleDone: (id: string) => void;
   removeToDo: (id: string) => void;
 };
 
