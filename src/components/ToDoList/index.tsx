@@ -13,18 +13,15 @@ export function ToDoList() {
 
   return (
     <ScrollView>
-      <AnimatePresence>
-        {toDos.map((toDo, index) => (
-          <MotiView
-            key={toDo.id}
-            from={{ translateX: deviceWidth, opacity: 0 }}
-            animate={{ translateX: 0, opacity: 1 }}
-            exit={{ translateX: -deviceWidth, opacity: 0 }}
-          >
-            <ToDoItem key={toDo.id} showGradient={index % 2 === 0} data={toDo} />
-          </MotiView>
-        ))}
-      </AnimatePresence>
+      {toDos.map((toDo, index) => (
+        <MotiView
+          key={toDo.id}
+          from={{ translateX: deviceWidth, opacity: 0 }}
+          animate={{ translateX: 0, opacity: 1 }}
+        >
+          <ToDoItem key={toDo.id} showGradient={index % 2 === 0} data={toDo} />
+        </MotiView>
+      ))}
     </ScrollView>
   );
 }
