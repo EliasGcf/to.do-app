@@ -45,7 +45,7 @@ Remembering that you need to have a [Figma](http://figma.com/) account to access
 **Clone the project and access the folder**
 
 ```bash
-$ https://github.com/EliasGcf/to.do-app.git && cd to.do-app
+git clone https://github.com/EliasGcf/to.do-app.git && cd to.do-app
 ```
 
 **Follow the steps below**
