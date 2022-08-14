@@ -3,6 +3,11 @@ module.exports = {
   content: ['./src/**/*.tsx'],
   theme: {
     extend: {
+      fontFamily: {
+        inter: 'Inter_400Regular',
+        'inter-bold': 'Inter_700Bold',
+      },
+
       colors: {
         purple: '#8284FA',
         'purple-dark': '#5E60CE',
