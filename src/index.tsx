@@ -3,6 +3,8 @@ import { useFonts } from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 
+import { Home } from '~/pages/Home';
+
 SplashScreen.preventAutoHideAsync();
 
 export function App() {
@@ -17,5 +19,11 @@ export function App() {
 
   SplashScreen.hideAsync();
 
-  return <StatusBar style="light" />;
+  return (
+    <>
+      <StatusBar style="light" />
+
+      <Home />
+    </>
+  );
 }
