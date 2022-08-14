@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        inter: 'Inter_400Regular',
-        'inter-bold': 'Inter_700Bold',
+        sans: 'Inter_400Regular',
+        bold: 'Inter_700Bold',
       },
 
       colors: {
