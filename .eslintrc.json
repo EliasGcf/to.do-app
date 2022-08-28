@@ -41,7 +41,7 @@
     "unused-imports/no-unused-imports": "error",
 
     "import/prefer-default-export": "off",
-    "import/extensions": ["error", "ignorePackages", { "ts": "never", "tsx": "never" }],
+    "import/extensions": ["error", "ignorePackages", { "ts": "never", "tsx": "never", "js": "never" }],
 
     "import-helpers/order-imports": [
       "warn",
@@ -53,6 +53,7 @@
           "/^~/assets/",
           "/^~/components/",
           "/^~/pages/",
+          "/^~/styles/",
           "/^~/routes/",
           "/^~/services/",
           "/^~/utils/",
