@@ -1,0 +1,33 @@
+name: Publish to Expo and build APK
+
+on: push
+
+jobs:
+  publish:
+    name: Publish and Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🏗 Setup repo
+        uses: actions/checkout@v2
+
+      - name: 🏗 Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.x
+
+      - name: 🏗 Setup Expo and EAS
+        uses: expo/expo-github-action@v7
+        with:
+          eas-version: latest
+          expo-version: latest
+          packager: yarn
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: 📦 Install dependencies
+        run: yarn
+
+      - name: 🚀 Publish app
+        run: expo publish --non-interactive
+
+      - name: 🔧 Build app
+        run: eas build -p android --no-wait --non-interactive
