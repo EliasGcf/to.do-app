@@ -11,7 +11,7 @@ export function TextInput({ ...rest }: TextInputProps) {
   return (
     <RNTextInput
       {...rest}
-      className="text-base leading-5 bg-gray-500 border-2 border-gray-700 text-gray-100 w-full h-14 rounded-md pl-4 focus:border-purple-dark font-sans"
+      className="text-base leading-5 bg-gray-500 border-2 border-gray-700 text-gray-100 flex-1 h-[54px] rounded-md pl-4 focus:border-purple-dark font-sans"
       placeholderTextColor={colors.gray[300]}
     />
   );
