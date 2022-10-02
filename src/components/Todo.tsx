@@ -1,20 +1,23 @@
 import { useState } from 'react';
-import { TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View, ViewProps } from 'react-native';
 
 import TrashSvg from '~/assets/svg/trash.svg';
 
 import { Checkbox } from '~/components/Checkbox';
 import { Text } from '~/components/Text';
 
-type TodoProps = {
+type TodoProps = ViewProps & {
   text: string;
 };
 
-export function Todo({ text }: TodoProps) {
+export function Todo({ text, ...rest }: TodoProps) {
   const [done, setDone] = useState(false);
 
   return (
-    <View className="p-3 bg-gray-500 min-h-[64px] flex-row items-center rounded-lg border-[1.5px] border-gray-400">
+    <View
+      className="p-3 bg-gray-500 min-h-[64px] flex-row items-center rounded-lg border-[1.5px] border-gray-400"
+      {...rest}
+    >
       <Checkbox className="mr-2" done={done} onPress={() => setDone(!done)} />
 
       <Text className="flex-1">{text}</Text>

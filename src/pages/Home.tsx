@@ -1,11 +1,9 @@
-import { Pressable, View } from 'react-native';
-
-import PlusSvg from '~/assets/svg/plus.svg';
+import { View } from 'react-native';
 
 import { Header } from '~/components/Header';
 import { Label } from '~/components/Label';
-import { TextInput } from '~/components/TextInput';
 import { Todo } from '~/components/Todo';
+import { TodoForm } from '~/components/TodoForm';
 
 export function Home() {
   return (
@@ -13,13 +11,7 @@ export function Home() {
       <Header />
 
       <View className="px-6 mt-[-30px]">
-        <View className="flex-row items-center">
-          <TextInput placeholder="Adicione uma nova tarefa" />
-
-          <Pressable className="bg-blue-dark p-4 rounded-md ml-1 active:bg-blue">
-            <PlusSvg />
-          </Pressable>
-        </View>
+        <TodoForm />
 
         <View className="flex-row justify-between mt-8 mb-5">
           <Label variant="created" count={0} />
@@ -28,7 +20,11 @@ export function Home() {
 
         {/* <EmptyList /> */}
 
-        <Todo text="Integer urna interdum massa libero auctor neque turpis turpis semper." />
+        <View className="gap-2">
+          <Todo text="Integer urna interdum massa libero auctor neque turpis turpis semper." />
+          <Todo text="Integer urna interdum massa libero auctor neque turpis turpis semper." />
+          <Todo text="Integer urna interdum massa libero auctor neque turpis turpis semper." />
+        </View>
       </View>
     </View>
   );
