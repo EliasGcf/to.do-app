@@ -9,6 +9,7 @@ export type Todo = {
 export type TodosStore = {
   todos: Todo[];
   toggleDone: (id: string) => void;
+  add: (text: string) => void;
   remove: (id: string) => void;
 };
 
