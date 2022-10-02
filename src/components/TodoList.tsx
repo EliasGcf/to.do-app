@@ -2,7 +2,7 @@ import { FlatList, View } from 'react-native';
 
 import { EmptyList } from '~/components/EmptyList';
 import { Label } from '~/components/Label';
-import { Todo } from '~/components/Todo';
+import { TodoItem } from '~/components/TodoItem';
 
 import { useTodos } from '~/hooks/useTodos';
 
@@ -22,7 +22,7 @@ export function TodoList() {
         ListEmptyComponent={EmptyList}
         keyExtractor={(item) => item.id}
         renderItem={({ item, index }) => (
-          <Todo text={item.text} className={index !== 0 ? 'mt-2' : ''} />
+          <TodoItem data={item} className={index !== 0 ? 'mt-2' : ''} />
         )}
       />
     </View>
