@@ -15,12 +15,14 @@ export function Todo({ text, ...rest }: TodoProps) {
 
   return (
     <View
-      className="p-3 bg-gray-500 min-h-[64px] flex-row items-center rounded-lg border-[1.5px] border-gray-400"
+      className={`p-3 bg-gray-500 min-h-[64px] flex-row items-center rounded-lg border-[1.5px] ${
+        done ? 'border-gray-500' : 'border-gray-400'
+      }`}
       {...rest}
     >
       <Checkbox className="mr-2" done={done} onPress={() => setDone(!done)} />
 
-      <Text className="flex-1">{text}</Text>
+      <Text className={`flex-1 ${done ? 'text-gray-300 line-through' : ''}`}>{text}</Text>
 
       <TouchableOpacity className="h-8 w-8 items-center justify-center rounded">
         <TrashSvg />
