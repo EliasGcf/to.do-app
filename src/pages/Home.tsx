@@ -1,4 +1,4 @@
-import { TouchableOpacity, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 
 import PlusSvg from '~/assets/svg/plus.svg';
 
@@ -16,9 +16,9 @@ export function Home() {
         <View className="flex-row items-center">
           <TextInput placeholder="Adicione uma nova tarefa" />
 
-          <TouchableOpacity className="bg-blue p-4 rounded-md ml-1" activeOpacity={0.7}>
+          <Pressable className="bg-blue-dark p-4 rounded-md ml-1 active:bg-blue">
             <PlusSvg />
-          </TouchableOpacity>
+          </Pressable>
         </View>
 
         <View className="flex-row justify-between mt-8 mb-5">
