@@ -4,14 +4,11 @@ import { EmptyList } from '~/components/EmptyList';
 import { Label } from '~/components/Label';
 import { Todo } from '~/components/Todo';
 
-const DATA = [
-  { id: '1', text: 'First Item', done: false },
-  { id: '2', text: 'Second Item', done: true },
-  { id: '3', text: 'Third Item', done: false },
-  { id: '4', text: 'Fourth Item', done: true },
-];
+import { useTodos } from '~/hooks/useTodos';
 
 export function TodoList() {
+  const todos = useTodos((state) => state.todos);
+
   return (
     <View>
       <View className="flex-row justify-between mt-8 mb-5">
@@ -20,7 +17,7 @@ export function TodoList() {
       </View>
 
       <FlatList
-        data={DATA}
+        data={todos}
         className="h-full"
         ListEmptyComponent={EmptyList}
         keyExtractor={(item) => item.id}
