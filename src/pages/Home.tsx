@@ -2,10 +2,10 @@ import { TouchableOpacity, View } from 'react-native';
 
 import PlusSvg from '~/assets/svg/plus.svg';
 
-import { EmptyList } from '~/components/EmptyList';
 import { Header } from '~/components/Header';
 import { Label } from '~/components/Label';
 import { TextInput } from '~/components/TextInput';
+import { Todo } from '~/components/Todo';
 
 export function Home() {
   return (
@@ -21,12 +21,14 @@ export function Home() {
           </TouchableOpacity>
         </View>
 
-        <View className="flex-row justify-between mt-8 pb-5 border-b border-b-gray-400">
+        <View className="flex-row justify-between mt-8 mb-5">
           <Label variant="created" count={0} />
           <Label variant="completed" count={0} />
         </View>
 
-        <EmptyList />
+        {/* <EmptyList /> */}
+
+        <Todo text="Integer urna interdum massa libero auctor neque turpis turpis semper." />
       </View>
     </View>
   );
